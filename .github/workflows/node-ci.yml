@@ -16,3 +16,14 @@ jobs:
         node-version: 12.x
     - name: Install npm packages
       run: npm ci
+  release:
+    name: Create a new release
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Create bundle
+      run: npm run build
+    - name: Debug
+      run: |
+        pwd
+        ls -l
+        ls -l dist
