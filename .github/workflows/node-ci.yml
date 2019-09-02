@@ -18,6 +18,7 @@ jobs:
       run: npm ci
   release:
     name: Create a new release
+    needs: install
     runs-on: ubuntu-18.04
     steps:
     - name: Create bundle
