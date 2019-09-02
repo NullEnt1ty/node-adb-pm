@@ -5,12 +5,16 @@
   "main": "src/index.js",
   "bin": "src/index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "build": "pkg --out-path dist ."
   },
   "author": "Dominique Mattern <dominique@mattern.dev>",
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.2",
     "inquirer": "^7.0.0"
+  },
+  "devDependencies": {
+    "pkg": "^4.4.0"
   }
 }
