@@ -19,6 +19,7 @@ jobs:
   release:
     name: Create a new release
     needs: install
+    runs-on: ubuntu-18.04
     steps:
     - name: Create bundle
       run: npm run build
