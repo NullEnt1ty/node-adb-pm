@@ -18,6 +18,13 @@ jobs:
         - npm run build
         - pwd && ls -l
         - ls -l dist/
+      deploy:
+        provider: releases
+        api_key:
+          secure: AcYN085Q1TvyGvDQ0qSE5bsHH6P5BjboIoFT60I/0kCU9Kz0as/U8I3/E4YLp4pUq/3iEEEdyQFl37VWRu+pPh1k4F6YDZC2lsQcMZ+e6tTMU7MxHHSwi48xsh9SliyftZXZZFck3RkNKpN2IkS7/NdTUsRkEgcdylyz+Qwus1tgaUFea8bcZyfaYO1WBjB0K2sCqhzHQF9SZbWWrGRjwPqsQqaJlxKvgXZSse3Rz5QDvaqdInuE/91gR7Jiq9oq4A9TfAKUAlc897y0b35KWOk9pqzPAghdrbR0MOGxzMgEzftqq6X8C2iOPiQdWZFE/VSn2XTSzGNgl12FhejnxtBQJiC2gvj+WxqywBXgNn49XtlksTHU1gsjHytjUkJdnV1/zLIabQ38KkIu6er9LzybxPNz9wNiEpf3qJuCLf/iMi9nABjdmOI0UvgDSdpgYzxpREwiVo8z9hksYyktO0AkuMJrO6xcyiOH5R6Jw+AAsfnyR02H35FaIgZCf6WfAL2Kjz5NFeZzmhXRwSMBub0AcajK8K1u9UQyig2qiY92+wATY+ZWiT8DhScDAsEwxCKYTB1OkTFSzxoOX7UcKfUNu4yZzaFsbarvDxjieZuxOYbxtuXhwsHjE7uUSfUN3OoiwHm4vtlt8hFzl6Ru8S8ekyb+360KwJhchihhOU0=
+        skip_cleanup: true
+        file_glob: true
+        file: dist/*
 
 stages:
   - name: test
