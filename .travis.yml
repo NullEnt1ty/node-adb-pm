@@ -15,6 +15,7 @@ jobs:
     - stage: deploy_github_release
       script: pwd && ls -l
 
-# stages:
-#   - name: deploy_github_release
-#     if: branch = master AND tag =~ /^v.*/
+stages:
+  - name: deploy_github_release
+    # if: branch = master AND tag =~ /^v.*/
+    if: tag =~ /^v.*/
