@@ -1,4 +1,3 @@
-dist: bionic
 language: node_js
 node_js:
   - "node"
@@ -8,14 +7,19 @@ install:
   - npm ci
 
 script:
-  - echo foo
+  - echo Tests are wip
 
 jobs:
   include:
-    - stage: deploy_github_release
-      script: pwd && ls -l
+    - stage: Deploy GitHub Release
+      install:
+        - npm ci
+      script:
+        - npm run build
+        - pwd && ls -l
+        - ls -l dist/
 
 stages:
-  - name: deploy_github_release
-    # if: branch = master AND tag =~ /^v.*/
+  - name: test
+  - name: Deploy GitHub Release
     if: tag =~ /^v.*/
