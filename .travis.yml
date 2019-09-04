@@ -25,6 +25,7 @@ jobs:
         skip_cleanup: true
         file_glob: true
         file: dist/*
+        body: tbd
         on:
           tags: true
 
