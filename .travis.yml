@@ -1,0 +1,20 @@
+dist: bionic
+language: node_js
+node_js:
+  - "node"
+  - "lts/*"
+
+install:
+  - npm ci
+
+script:
+  - echo foo
+
+jobs:
+  include:
+    - stage: deploy_github_release
+      script: pwd && ls -l
+
+stages:
+  - name: deploy_github_release
+    if: branch = master AND tag =~ /^v.*/
