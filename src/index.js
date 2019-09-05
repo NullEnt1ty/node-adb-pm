@@ -90,8 +90,6 @@ inquirer
     },
   ])
   .then((answers) => {
-    console.log(answers);
-
     if (answers.action === 'listInstalledPackages') {
       listPackages(answers.userId);
     } else if (answers.action === 'uninstallPackages') {
