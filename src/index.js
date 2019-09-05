@@ -6,9 +6,16 @@ const chalk = require('chalk');
 const inquirer = require('inquirer');
 
 const AdbError = require('./adb-error');
+const AdbManager = require('./adb-manager');
 const AndroidPackageManager = require('./android-package-manager');
 
-// TODO: Check if adb is installed
+if (!AdbManager.adbIsInstalled()) {
+  const message = 'adb was not found on your system. Make sure to install the '
+    + 'Android Platform Tools and add them to your PATH environment variable.';
+  console.log(chalk.red(message));
+  process.exit(1);
+}
+
 // TODO: Support multiple Android devices
 // TODO: Show package friendly name
 
