@@ -31,5 +31,6 @@ jobs:
 
 stages:
   - name: test
+    if: branch = develop OR branch = master
   - name: Deploy GitHub Release
     if: tag =~ /^v.*/
